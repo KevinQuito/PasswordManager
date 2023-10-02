@@ -57,25 +57,6 @@ def save():
     else:
         is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\nEmail: {user}\nPassword: {password}\nIs it okay to save?")
         if is_ok:
-            ###### SAVING TO TEXT FILE ###########################
-            # with open("Day29-PasswordManager/data.txt", mode="a") as file2:
-            #     file2.write(f"{website} | {user} | {password}\n")
-            ###### SAVING TO JSON FILE ###########################
-            # also, indent=4 makes it easier for a human to read since it gets formatted this way in the file
-            # with open("Day29-PasswordManager/data.json", mode="w") as file2:
-            #     json.dump(new_data, file2, indent=4)
-            # ###### READING JSON FILE ##########################
-            # with open("Day29-PasswordManager/data.json", mode="r") as file2:
-            #     json_data = json.load(file2)
-            #     print(json_data)
-            ###### UPDATING JSON FILE ############################
-            # with open("Day29-PasswordManager/data.json", mode="r") as file2:
-            #     data = json.load(file2)
-            #     data.update(new_data)
-            # with open("Day29-PasswordManager/data.json", mode="w") as file3:    
-            #     json.dump(data, file3, indent=4)
-            ##### ERROR HANDLING W/ JSON ########################
-            # if the json file doesn't exist yet or does not have any data inside it
             try:
                 with open("Day29-PasswordManager/data.json", mode="r") as file2:
                     data = json.load(file2)
