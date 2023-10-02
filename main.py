@@ -23,15 +23,9 @@ def generate_password():
     symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
     letter_list = [random.choice(letters) for i in range(random.randint(8, 10))]
-    # for char in range(nr_letters):
-    #   password_list.append(random.choice(letters))
     symbol_list = [random.choice(symbols) for i in range(random.randint(2, 4))]
-    # for char in range(nr_symbols):
-    #   password_list += random.choice(symbols)
     number_list = [random.choice(numbers) for i in range(random.randint(2, 4)
     )]
-    # for char in range(nr_numbers):
-    #   password_list += random.choice(numbers)
     password_list = letter_list + symbol_list + number_list
 
     random.shuffle(password_list)
@@ -39,7 +33,6 @@ def generate_password():
     password = "".join(password_list)   # putting all the strings inside a list together not separated with a space " " or an underscore "_", but rather ""
     pass_input.insert(0, password)
     pyperclip.copy(password)    # automatically copies the password, so you can just already paste it to the website you're signing up in instead of manually copying AND THEN PASTING IT, so it skips the step of manually copying
-# print(f"Your password is: {password}")
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
     website = site_input.get()
@@ -70,7 +63,6 @@ def save():
             finally:
                 site_input.delete(0, 'end')
                 pass_input.delete(0, 'end')
-    # print(data)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
